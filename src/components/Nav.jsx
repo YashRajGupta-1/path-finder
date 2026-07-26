@@ -71,13 +71,16 @@ export function Nav({ isVisualizationRunningRef }) {
     animatePath(traversedTiles, path, startTile, endTile, speed);
     setIsDisabled(true);
     isVisualizationRunningRef.current = true;
+    const speedValue = SPEEDS.find((s) => s.value === speed).value;
+    const traversalTime = traversedTiles.length * SLEEP_TIME * speedValue;
+    const pathTime = path.length * EXTENDED_SLEEP_TIME * speedValue;
     setTimeout(() => {
       const newGrid = grid.slice();
       setGrid(newGrid);
       setIsGraphVisualized(true);
       setIsDisabled(false);
       isVisualizationRunningRef.current = false;
-    }, SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) * SPEEDS.find((s) => s.value === speed).value);
+    }, traversalTime + pathTime);
   };
 
   return (
