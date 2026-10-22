@@ -31,7 +31,7 @@ Pathfinding algorithms live as pseudocode in textbooks — correct, but invisibl
 
 ## Overview
 
-![Pathfinding visualization](assets/overview.png)
+![Pathfinding visualization](src/assets/overview.png)
 
 A React + Vite app rendering a 39×49 interactive grid. Draw walls, reposition start/end tiles, generate a maze, choose an algorithm and speed — then watch the traversal animate and the shortest path light up.
 
@@ -79,7 +79,7 @@ A 1,911-tile grid re-rendered through React state on every step would stutter. A
 
 ## 🧠 Architecture
 
-![Architecture](assets/architecture.png)
+![Architecture](src/assets/architecture.png)
 
 ```text
                  ┌──────────────────┐
